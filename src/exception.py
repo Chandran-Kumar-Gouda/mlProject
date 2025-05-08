@@ -1,4 +1,3 @@
-import logging
 import sys  # Importing the sys module to access exception and traceback info
 
 # Function to create a detailed error message using traceback info

@@ -6,8 +6,12 @@ import pandas as pd
 
 from sklearn.model_selection import train_test_split
 from dataclasses import dataclass
+
 from src.components.data_transformation import DataTranformation
 from src.components.data_transformation import DataTransformationConfig
+
+from src.components.model_trainer import ModelTrainer
+from src.components.model_trainer import ModelTrainerConfig
 
 # The DataIngestionConfig class uses the @dataclass decorator to automatically generate special methods
 # such as __init__, __repr__, and __eq__ based on the class attributes.
@@ -67,4 +71,7 @@ if __name__ == "__main__":
     train_data, test_data = obj.initiate_data_ingestion()       # Call the method to start the data ingestion process.
 
     data_transforamtion = DataTranformation()
-    data_transforamtion.initiate_data_transformation(train_path=train_data ,test_path=test_data)
+    train_arr , test_arr ,_ = data_transforamtion.initiate_data_transformation(train_data ,test_data)
+
+    model_trainer =ModelTrainer()
+    print(model_trainer.initiate_model_trainer(train_arr , test_arr))

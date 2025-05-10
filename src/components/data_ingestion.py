@@ -6,6 +6,8 @@ import pandas as pd
 
 from sklearn.model_selection import train_test_split
 from dataclasses import dataclass
+from src.components.data_transformation import DataTranformation
+from src.components.data_transformation import DataTransformationConfig
 
 # The DataIngestionConfig class uses the @dataclass decorator to automatically generate special methods
 # such as __init__, __repr__, and __eq__ based on the class attributes.
@@ -21,7 +23,7 @@ class DataIngestionConfig:
 # The DataIngestion class is responsible for the entire data ingestion process.
 class DataIngestion:
     def __init__(self):        # The constructor initializes the ingestion configuration by creating an instance of DataIngesttionConfig.
-        self.ingestion_config = DataIngesttionConfig()   # Creates an instance of DataIngesttionConfig containing the paths for saving data.
+        self.ingestion_config = DataIngestionConfig()   # Creates an instance of DataIngesttionConfig containing the paths for saving data.
     
     def initiate_data_ingestion(self):         # This method handles the data ingestion process — reading the data, splitting it, and saving it.
 
@@ -62,5 +64,7 @@ class DataIngestion:
 # Main method to execute the DataIngestion class.
 if __name__ == "__main__":
     obj = DataIngestion()               # Instantiate the DataIngestion class.
-    obj.initiate_data_ingestion()       # Call the method to start the data ingestion process.
+    train_data, test_data = obj.initiate_data_ingestion()       # Call the method to start the data ingestion process.
 
+    data_transforamtion = DataTranformation()
+    data_transforamtion.initiate_data_transformation(train_path=train_data ,test_path=test_data)

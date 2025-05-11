@@ -177,6 +177,6 @@ cython_debug/
 *.csv
 *.ipynb
 catboost_info/
-src/pipeline/train_pipeline.py
+src/pipeline/train_pipeline.py/
 artifacts/*.log
 

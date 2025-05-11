@@ -174,13 +174,8 @@ cython_debug/
 .pypirc
 
 # .gitignore
-*.csv
 *.ipynb
 catboost_info/
 src/pipeline/train_pipeline.py
-src/components/data_ingestion.py
-src/components/data_transformation.py
-src/components
-artifacts/*.log
-notebook/
+
 

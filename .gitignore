@@ -172,3 +172,13 @@ cython_debug/
 
 # PyPI configuration file
 .pypirc
+
+# .gitignore
+*.csv
+*.ipynb
+notebook/
+catboost_info/
+src/components/
+src/pipeline/train_pipeline.py
+artifacts/*.log
+

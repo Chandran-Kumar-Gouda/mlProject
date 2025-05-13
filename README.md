@@ -1,2 +1,2 @@
 ## This is End to End Ml Project
- [Link Text]([https://example.com](https://score-seer-rxjf.onrender.com))
+[Visit score seer site](https://score-seer-rxjf.onrender.comhttps://www.google.com)
